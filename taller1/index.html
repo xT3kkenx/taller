@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>valee</title>
+
+    <style>
+    </style>
+    <h1>Generador de historias aleatorias</h1>
+    <p>Ingresa el nombre personalizado:</p>
+    <input type="text" id="nombrePersonalizado" name="nombrePersonalizado">
+    <br>
+    <label for="pais">País:</label>
+    <select id="pais" name="pais">
+        <option value="default">Por defecto (EE. UU.)</option>
+        <option value="reinoUnido">Reino Unido</option>
+    </select>
+    <br>
+    <button id="botonGenerar">Generar historia aleatoria</button>
+    <p id="historia"></p>
+
+    <script>
+        function generarHistoriaAleatoria() {
+            const nombre = document.getElementById("nombrePersonalizado").value || "Bob";
+            const pais = document.getElementById("pais").value;
+
+            let historia;
+
+            if (pais === "reinoUnido") {
+                historia = `Una vez me voy a ir a Perú, ${nombre} fui a visitar a mi pequeña loquita bella. ${nombre} decido ir porque quiero estar con ella un tiempo. Luego, ${nombre} y ella  iremos a pasear ir a otro lugar visitar estar con su familia y etc, ${nombre} volviendo a la casa de la malcriada le hare el sin respeto.`;
+            } else {
+                historia = `Una vez me voy a ir a Perú, ${nombre} fui a visitar a mi pequeña loquita bella. ${nombre} decido ir porque quiero estar con ella un tiempo. Luego, ${nombre} y ella iremos a pasear ir a otro lugar visitar estar con su familia y etc, ${nombre} volviendo a la de la malcriada casa le hare el sin respeto.`;
+            }
+
+            document.getElementById("historia").textContent = historia;
+        }
+
+        document.getElementById("botonGenerar").addEventListener("click", generarHistoriaAleatoria);
+    </script>
+</head>
+
+<body>
+    <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+    <p class="story"></p>
+</body>
+<script> src='script.js'</script>
+</html>
